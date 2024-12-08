@@ -26,7 +26,7 @@
     "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "ci": "npm run build && npm run check-exports && npm run lint",
     "clean": "git clean -xdf node_modules dist .cache tsconfig.tsbuildinfo",
-    "local-release": "changeset version",
+    "local-release": "changeset version && changeset release",
     "prepublishOnly": "npm run ci"
   },
   "keywords": [
