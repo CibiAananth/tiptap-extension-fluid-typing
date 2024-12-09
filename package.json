@@ -1,0 +1,69 @@
+{
+  "name": "tiptap-extension-fluid-typing",
+  "version": "0.0.2",
+  "type": "module",
+  "description": "A TipTap extension that adds smooth, fluid animations to characters as they are typed",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --clean --watch",
+    "lint": "tsc",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "ci": "npm run build && npm run check-exports && npm run lint",
+    "clean": "git clean -xdf node_modules dist .cache tsconfig.tsbuildinfo",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "npm run ci"
+  },
+  "keywords": [
+    "tiptap",
+    "tiptap-extension",
+    "prosemirror",
+    "wysiwyg",
+    "editor",
+    "animation",
+    "fluid",
+    "smooth",
+    "typing"
+  ],
+  "author": "Cibi Aananth <hey@asciibi.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CibiAananth/tiptap-extension-fluid-typing"
+  },
+  "bugs": {
+    "url": "https://github.com/CibiAananth/tiptap-extension-fluid-typing/issues"
+  },
+  "homepage": "https://github.com/CibiAananth/tiptap-extension-fluid-typing#readme",
+  "peerDependencies": {
+    "@tiptap/core": "^2.10.3"
+  },
+  "dependencies": {
+    "@tiptap/core": "^2.10.3",
+    "prosemirror-model": "^1.24.0",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-view": "^1.37.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.1",
+    "@changesets/cli": "^2.27.10",
+    "@types/node": "^22.10.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
+}
