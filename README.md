@@ -2,6 +2,8 @@
 
 A TipTap extension that adds smooth, fluid animations to characters as they are typed in the editor. This extension provides a natural and engaging typing experience by animating each character with customizable easing functions.
 
+https://github.com/user-attachments/assets/ca360ec5-9eef-4f47-a9fd-a6f2053e6aff
+
 ## Features
 
 - Smooth character-by-character animation
